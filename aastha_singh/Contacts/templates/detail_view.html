@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+    <link rel="stylesheet" href="{% static 'detail_view.css' %}">
+</head>
+<body>
+    <div class="detail_view">
+        <h2>Contact Details</h2>
+        
+        <p><strong>Name:</strong> {{ data.contact_name }}</p>
+        <p><strong>Email:</strong> {{ data.contact_email }}</p>
+        <p><strong>Notes:</strong> {{ data.notes }}</p>
+        <p><strong>Created Time:</strong> {{ data.contact_created_time }}</p>
+        
+        <div class="buttons">
+            <a href="{% url 'HomePage' %}" class="btn btn-home">Home</a>
+            <a href="{% url 'Update' data.id %}" class="btn btn-edit">Edit</a>
+            <a href="{% url 'Delete' data.id %}" class="btn btn-delete">Delete</a>
+        </div>
+    </div>
+</body>
+</html>

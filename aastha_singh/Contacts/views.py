@@ -25,3 +25,10 @@ def list_view(request):
    context['dataset'] = Contact.objects.all()
 
    return render(request, "list_view.html", context)
+
+def detail_view(request, id):
+    context = {}
+
+    context["data"] = Contact.objects.get(id=id)
+
+    return render(request, "detail_view.html", context)
