@@ -1,0 +1,91 @@
+.create_contact {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.create_contact h2 {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 30px;
+} 
+
+.create_contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create_contact label,
+.create_contact input,
+.create_contact textarea {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.create_contact input[type="text"],
+.create_contact input[type="email"],
+.create_contact textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.create_contact textarea {
+    height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    background-color: #2874a6;
+}
+
+.btn-secondary:hover {
+    background-color: #b2b2b2;
+}
+
+.clickable-row {
+    cursor: pointer;
+}
+
+.clickable-row:hover {
+    background-color: #f5f5f5; 
+}
+
+form {
+    display: contents;
+}
+
+form button {
+    cursor: pointer;
+}
