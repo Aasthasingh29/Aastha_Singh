@@ -1,5 +1,6 @@
-from django.shortcuts import render
-
+from django.shortcuts import (get_object_or_404,
+                               render,
+                               HttpResponseRedirect)
 from .models import Contact
 
 from .forms import ContactForm
@@ -32,3 +33,21 @@ def detail_view(request, id):
     context["data"] = Contact.objects.get(id=id)
 
     return render(request, "detail_view.html", context)
+
+def update_view(request, id):
+    context = {}
+
+    obj = get_object_or_404(Contact, id=id)
+
+    form = ContactForm(request.POST or None, instance = obj)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/"+id)
+    
+    context["form"] = form
+
+    return render(request, "update_view.html", context)
+
+def delete_view(request, id):
+    pass
