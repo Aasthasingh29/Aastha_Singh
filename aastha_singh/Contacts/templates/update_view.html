@@ -20,5 +20,13 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById("updateForm").addEventListener("submit",function(event) {
+            event.preventDefault();
+
+            window.location.href = "{% url 'HomePage' %}";
+        });
+    </script>
 </body>
 </html>

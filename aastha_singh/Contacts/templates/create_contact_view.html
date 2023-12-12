@@ -11,14 +11,26 @@
 <body>
     <div class="create_contact">
         <h2>Create a Contact</h2>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" id="createForm">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="button" class="btn btn-secondary" onclick="location.href='{% url 'HomePage' %}'">Cancel</button>
+                <button type="button" class="btn btn-secondary" onclick="cancel()">Cancel</button>
             </div>
         </form>
     </div>
+
+    <script>
+        function cancel() {
+            window.location.href = "{% url 'HomePage' %}";
+        }
+
+        document.getElementById("createForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            window.location.href = "{% url 'HomePage' %}";
+        });
+    </script>
 </body>
 </html>
