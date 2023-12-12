@@ -50,4 +50,13 @@ def update_view(request, id):
     return render(request, "update_view.html", context)
 
 def delete_view(request, id):
-    pass
+    context = {}
+
+    obj = get_object_or_404(Contact, id=id)
+
+    if request.method == "POST":
+        obj.delete()
+        
+        return HttpResponseRedirect("/")
+    
+    return render(request, "delete_view.html", context)
