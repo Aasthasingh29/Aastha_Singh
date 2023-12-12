@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <link rel="stylesheet" href="{% static 'list_view.css' %}">
+</head>
+<body>
+    <div class="list_view">
+        <h1>Contact Management</h1>
+        <a href="{% url 'Create' %}">Create a New Contact</a>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Contact Name</th>
+                    <th>Email</th>
+                    <th>Created Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in dataset %}
+                <tr class="clickable-row" data-href="{% url 'DetailView' data.id %}">
+                    <td>{{ data.contact_name }}</td>
+                    <td>{{ data.contact_email }}</td>
+                    <td>{{ data.contact_created_time }}</td>
+                    <td>
+                        <a href="{% url 'Delete' data.id %}" class="btn-delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        // JavaScript to make the table rows clickable
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.clickable-row');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const href = this.dataset.href;
+                    if(href) {
+                        window.location.href = href;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
