@@ -11,7 +11,7 @@
 <body>
     <div class="create_contact">
         <h2>Update Contact</h2>
-        <form method="POST">
+        <form method="POST" id="updateForm">
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
