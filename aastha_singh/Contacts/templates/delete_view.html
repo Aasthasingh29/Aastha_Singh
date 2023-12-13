@@ -15,12 +15,18 @@
             {% csrf_token %}
             Are you want to delete this item ?
             <input type="submit" value="Yes" />
-            <a href="/">Cancel </a>
+            <button type="button" class="delete_contact_delete" onclick="cancel()">Cancel</button>
         </form>
     </div>
 
     <footer class="site-footer">
         <p>©Created by Aastha Singh</p>
     </footer>
+    
+    <script>
+        function cancel() {
+            window.location.href = "{% url 'HomePage' %}";
+        }
+    </script>
 </body>
 </html>

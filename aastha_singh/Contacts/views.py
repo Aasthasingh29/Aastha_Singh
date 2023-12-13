@@ -8,17 +8,32 @@ from .forms import ContactForm
 def index(request):
     return list_view(request)
 
-def create_contact_view(request):
+# def create_contact_view(request):
 
     context = {}
 
     form = ContactForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return HttpResponseRedirect("")
     
     context['form'] = form
     return render(request, "create_contact_view.html", context)
+from django.shortcuts import render, redirect
+from .forms import ContactForm  # Make sure this import matches your form's actual location
 
+def create_contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Redirect to the HomePage after successful form submission
+            return redirect('/')  # Replace with your actual URL name
+
+    else:
+        form = ContactForm()
+
+    return render(request, "create_contact_view.html", {'form': form})
 def list_view(request):
    
    context = {}
@@ -43,7 +58,8 @@ def update_view(request, id):
 
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("/"+id)
+        # return HttpResponseRedirect("/"+id)
+        return redirect('/'+id)
     
     context["form"] = form
 

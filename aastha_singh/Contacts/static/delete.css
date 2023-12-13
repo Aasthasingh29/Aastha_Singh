@@ -23,6 +23,7 @@ body {
 
 .delete_contact input[type="submit"] {
     background-color: #e74c3c; 
+    width: 100px;
     color: white;
     border: none;
     border-radius: 4px;
@@ -31,13 +32,15 @@ body {
     cursor: pointer;
 }
 
-.delete_contact a {
-    display: inline-block; 
-    background-color: #3498db; 
+
+.delete_contact_delete {
+    background-color: #3c53e7; 
+    width: 100px;
     color: white;
-    padding: 10px 20px;
+    border: none;
     border-radius: 4px;
-    text-decoration: none; 
+    padding: 10px 20px;
+    margin-right: 10px; 
     cursor: pointer;
 }
 
@@ -60,14 +63,13 @@ body {
 }
 
 
-footer .site-footer {
+.site-footer {
     text-align: center;
     padding: 10px;
     background-color: #e8e8e8;
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-top: 1px solid #ccc;
-    position: absolute;
-    bottom: 0;
+   
     width: 100%;
 }

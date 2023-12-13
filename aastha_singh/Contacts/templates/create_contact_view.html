@@ -15,7 +15,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"  onclick="cancel()">Submit</button>
                 <button type="button" class="btn btn-secondary" onclick="cancel()">Cancel</button>
             </div>
         </form>
@@ -29,12 +29,6 @@
         function cancel() {
             window.location.href = "{% url 'HomePage' %}";
         }
-
-        document.getElementById("createForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            window.location.href = "{% url 'HomePage' %}";
-        });
     </script>
 </body>
 </html>

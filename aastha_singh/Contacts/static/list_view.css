@@ -74,7 +74,6 @@ tbody tr:last-child td {
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-top: 1px solid #ccc;
-    position: absolute;
-    bottom: 0;
+    
     width: 100%;
 }
