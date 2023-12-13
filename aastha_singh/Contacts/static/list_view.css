@@ -66,3 +66,15 @@ tbody tr:last-child td {
 .list_view .btn-delete:hover {
     background-color: #ff5252;
 }
+
+.site-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e8e8e8;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

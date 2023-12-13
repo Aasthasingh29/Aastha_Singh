@@ -6,11 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a Contact</title>
-    <link rel="stylesheet" href="{% static 'create_contact.css' %}">
+    <link rel="stylesheet" href="{% static 'delete.css' %}">
 </head>
 <body>
     <div class="delete_contact">
-        <!-- Create a Form -->
         <form method="POST">
             <!-- Security token by Django -->
             {% csrf_token %}
@@ -19,5 +18,9 @@
             <a href="/">Cancel </a>
         </form>
     </div>
+
+    <footer class="site-footer">
+        <p>©Created by Aastha Singh</p>
+    </footer>
 </body>
 </html>
